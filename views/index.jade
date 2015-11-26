@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  section#articles
+    each article in articles
+      article.post
+        header
+          h2: a(href='#{article.path}') #{article.title}
+          span.date= article.showDate
+        
+        section.content!= article.summary
+        
+        .more: a(href='#{article.path}') read on &raquo;

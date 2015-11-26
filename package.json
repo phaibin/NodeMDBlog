@@ -1,0 +1,26 @@
+{
+  "name": "expressdemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dateformat": "^1.0.12",
+    "express": "^4.13.3",
+    "front-matter": "^2.0.0",
+    "jade": "^1.11.0",
+    "marked": "^0.3.5",
+    "morgan": "^1.6.1",
+    "serve-favicon": "~2.3.0",
+    "strsplit": "^1.0.0"
+  },
+  "devDependencies": {
+    "connect-livereload": "^0.5.3",
+    "gulp": "^3.9.0",
+    "gulp-express": "^0.3.5"
+  }
+}

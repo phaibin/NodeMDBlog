@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  p.title #[strong= tag] tag共有#{articles.length}篇文章
+    ul
+      each entry in articles
+        li
+          a(href='#{entry.path}')= entry.title

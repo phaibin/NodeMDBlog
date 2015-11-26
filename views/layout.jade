@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    link(rel='alternate', type='application/atom+xml', href='/atom.xml')
+    meta(http-equiv='Content-Type', content='text/html; charet=UTF-8')
+  body
+    header
+      h1 #[a(href='/') 海神]
+    nav
+      form.pull-right(action='/search')
+        input.search-query(type='text', name='keyword', placeholder='Search')
+      ul.inline
+        li #[a(href='/archives') 存档]
+        li #[a(href='/works') 作品]
+        li #[a(href='/my-favorite-tools') 我的常用工具]
+        li #[a(href='/snapshot') Blog快照]
+        li #[a(href='/about') 关于我]
+    hr
+    section
+      block content
+    hr
+    footer
+      section#link
+        a(href='http://github.com/phaibin') GitHub ·
+        a(href='mailto:phaibin@gmail.com')  Email ·
+        a(href='/atom.xml')  RSS
+      section powered by #[a(href='https://github.com/phaibin/MarkdownBlog') MardownBlog]

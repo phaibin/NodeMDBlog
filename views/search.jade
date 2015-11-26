@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  if articles.length > 0
+    section#articles
+      each article in articles
+        article.post
+          header
+            h2
+              a(href='#{article.path}')!= article.searchTitle
+              span.date= article.showDate
+              
+          section.content= article.searchSummary
+          .more #[a(href='#{article.path}')] read on &raquo;
+  else
+    p 没有搜索到结果

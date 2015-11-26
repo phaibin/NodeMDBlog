@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  article.post
+    header
+      h2= article.title
+      span.date= article.showDate
+      
+    section.tag
+      if article.tags
+        each tag in article.tags
+          a(href='/tags/#{tag}') ##{tag} 
+    
+    section.content!= md(article.body)
+    
+    hr
+    
+    section.navigator
+      if article.right
+        p 上一篇：
+          a(href='#{article.right.path}')= article.right.title
+      if article.left
+        p 下一篇：
+          a(href='#{article.left.path}')= article.left.title
+        
+    section.comments
+      #disqus_thread
+      script(type='text/javascript', src='http://disqus.com/forums/phaibin/embed.js')
+      noscript
+        a(href='http://phaibin.disqus.com/?url=ref') View the discussion thread. 
+      a(href='http://disqus.com' class='dsq-brlink') blog comments powered by 
+          span.logo-disqus Disqus
