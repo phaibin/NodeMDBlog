@@ -111,9 +111,9 @@ app.get('/:year/:month/:day/:slug', function(req, res, next) {
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+  var path = 'views/pages/404.md';
+  var content = fs.readFileSync(path, 'utf8');
+  res.render('page', { title:'404', content: marked(content) });
 });
 
 // error handlers
