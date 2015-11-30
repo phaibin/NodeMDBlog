@@ -5,6 +5,7 @@ var logger = require('morgan');
 
 var fs = require('fs');
 var marked = require('marked');
+var Feed = require('feed');
 
 Article = require('./lib/article');
 Article.load();
@@ -36,9 +37,26 @@ app.get('/tags/:tag', function(req, res, next) {
 });
 
 app.get('/atom.xml', function(req, res, next) {
-  var path = ['views/blogs/', req.params.title, '.md'].join('');
-  var content = fs.readFileSync(path, 'utf8');
-  res.render('blog', { title:'Blog', md: marked(content) });
+  var feed = new Feed({
+    title:        '海神',
+    description:  '文祥的Blog',
+    link: "http://baidu.com",
+    author: {
+        name:     '文祥',
+        email:    'phaibin@gmail.com',
+        link:     'https://phaibin.tk'
+    }
+  });
+  Article.allArticles.slice(0, 6).forEach(function(article) {
+    feed.addItem({
+      title: article.title,
+      link: 'http://phaibin.tk/' + article.path,
+      date: article.date,
+      description: article.summary,
+      content: marked(article.body)
+    });
+  });
+  res.send(feed.render('atom-1.0'));
 });
 
 app.get('/archives', function(req, res, next) {
@@ -47,11 +65,17 @@ app.get('/archives', function(req, res, next) {
 
 app.get('/search', function(req, res, next) {
   var keywords = req.query['keyword'].split(' ');
-  res.render('search', { title:keywords, articles:Article.search(keywords) });
+  res.render('search', { title:keywords, articles:Article.search(keywords).slice(0, 10) });
 });
 
 app.get('/about', function(req, res, next) {
   var path = 'views/pages/about.md';
+  var content = fs.readFileSync(path, 'utf8');
+  res.render('page', { title:'关于我', content: marked(content) });
+});
+
+app.get('/dandelion', function(req, res, next) {
+  var path = 'views/pages/dandelion.md';
   var content = fs.readFileSync(path, 'utf8');
   res.render('page', { title:'关于我', content: marked(content) });
 });

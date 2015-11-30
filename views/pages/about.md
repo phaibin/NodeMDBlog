@@ -9,5 +9,3 @@ email: phaibin@gmail.com
 豆瓣：phaibin
 
 twitter: phaibin
-
-[TenxCloud](/attachment/TenxCloud.mobileconfig)
