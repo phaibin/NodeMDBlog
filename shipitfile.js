@@ -1,6 +1,8 @@
 module.exports = function (shipit) {
   require('shipit-deploy')(shipit);
-  
+  require('shipit-npm')(shipit);
+  require('shipit-pm2')(shipit);
+
   shipit.initConfig({
     default: {
       workspace: '/tmp/github-monitor',
@@ -9,7 +11,7 @@ module.exports = function (shipit) {
       ignores: ['.git', 'node_modules'],
       rsync: ['--del'],
       keepReleases: 2,
-      shallowClone: true
+      shallowClone: true,
     },
     staging: {
       servers: 'phaibin-vultr'
@@ -17,6 +19,6 @@ module.exports = function (shipit) {
   });
 
   shipit.task('pwd', function () {
-    return shipit.remote('pwd');
+    return shipit.remote('which node');
   });
 };
