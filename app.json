@@ -1,0 +1,6 @@
+{
+  "apps" : [{
+    "name"        : "blog",
+    "script"      : "app.js"
+  }]
+}
