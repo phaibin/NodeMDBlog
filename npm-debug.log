@@ -54,10 +54,10 @@
 17 silly publish      'shipit-pm2': '0.0.4',
 17 silly publish      stringex: '^0.2.4',
 17 silly publish      yamljs: '^0.2.4' },
-17 silly publish   gitHead: '0bebc9d0b1e3b5b8051de75e8775e0f5b0a1f258',
+17 silly publish   gitHead: 'e87215adb262e0db9604ed83b648d624a70e1af9',
 17 silly publish   readme: 'ERROR: No README data found!',
 17 silly publish   _id: 'NodeMDBlog@1.0.0',
-17 silly publish   _shasum: '5e24e09e895e8faecd567f4040bb40945a171ad1',
+17 silly publish   _shasum: 'c0491654ac00d5699fb93510326b023497fd237d',
 17 silly publish   _from: '.' }
 18 verbose getPublishConfig undefined
 19 silly mapToRegistry name NodeMDBlog
