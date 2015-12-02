@@ -17,8 +17,4 @@ module.exports = function (shipit) {
       servers: 'phaibin-vultr'
     }
   });
-
-  shipit.task('pwd', function () {
-    return shipit.remote('which node');
-  });
 };

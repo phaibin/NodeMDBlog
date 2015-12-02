@@ -10,7 +10,7 @@ var slug = stringex.toUrl(stringex.toASCII(title));
 // console.log(slug);
 
 var article = '---\n';
-article += YAML.stringify({'title':slug, 'date':dateformat(Date.now(), 'yyyy-mm-dd HH:MM')});
+article += YAML.stringify({'title':title, 'date':dateformat(Date.now(), 'yyyy-mm-dd HH:MM')});
 article += '---\n';
 article += 'Once upon a time...\n\n';
 // console.log(article);
