@@ -140,9 +140,9 @@ app.use(function(err, req, res, next) {
   });
 });
 
-var port = 3000;
-if (app.get('env') === 'production') {
-  port = 80;
+var port = 80;
+if (app.get('env') === 'development') {
+  port = 3000;
 }
 
 var server = app.listen(port, function() {
