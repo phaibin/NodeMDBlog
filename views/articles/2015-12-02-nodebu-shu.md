@@ -1,6 +1,8 @@
 ---
 title: Node部署
 date: '2015-12-02 12:13'
+tags:
+- node
 ---
 Ruby里一般用capistrano来部署，非常方便。搜索Node部署发现还真的有人直接用capistrano来部署Node应用。然后搜索有没有Node的原生的类capistrano工具，还真的有一个，叫[shipit](https://github.com/shipitjs/shipit)。
 
@@ -86,6 +88,11 @@ shipit-pm2插件需要加入一个app.json文件作为pm2的配置文件。
 
   参考：<http://stackoverflow.com/questions/216202/why-does-an-ssh-remote-command-get-fewer-environment-variables-then-when-run-man>
 
+---
+
+另外一个很有意思的部署工具：<https://github.com/yyx990803/pod>
+
+类似于Heroku的部署，git push就是部署。也就是在服务器建立一个git仓库，把代码push上去，同时部署代码，重启服务器。对于个人作品非常方便。
 
 
 参考：   
