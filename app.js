@@ -140,7 +140,12 @@ app.use(function(err, req, res, next) {
   });
 });
 
-var server = app.listen(4000, function() {
+var port = 3000;
+if (app.get('env') === 'production') {
+  port = 80;
+}
+
+var server = app.listen(port, function() {
   var host = server.address().address;
   var port = server.address().port;
 
