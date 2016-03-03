@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "newpost": "node tools/newpost.js",
     "publish": "/bin/sh tools/publish.sh"
@@ -11,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "debug": "^2.2.0",
     "dateformat": "^1.0.12",
     "express": "^4.13.3",
     "feed": "^0.2.6",
