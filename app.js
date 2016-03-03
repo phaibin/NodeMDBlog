@@ -138,7 +138,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-var port = 3000;
+var port = process.env.PORT || 80;
 // if (app.get('env') === 'development') {
 //   port = 3000;
 // }
