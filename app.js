@@ -25,8 +25,6 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(require('connect-livereload')());
-
 app.get('/', function(req, res) {
   res.render('index', { title: '海神', articles: Article.allArticles.slice(0, 6) });
 });
