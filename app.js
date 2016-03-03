@@ -138,10 +138,10 @@ app.use(function(err, req, res, next) {
   });
 });
 
-var port = 80;
-if (app.get('env') === 'development') {
-  port = 3000;
-}
+var port = 3000;
+// if (app.get('env') === 'development') {
+//   port = 3000;
+// }
 
 var server = app.listen(port, function() {
   var host = server.address().address;
