@@ -2,12 +2,12 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-
+var env          = process.env;
 var fs = require('fs');
 var marked = require('marked');
 var Feed = require('feed');
 
-Article = require('./lib/article');
+var Article = require('./lib/article');
 Article.load();
 // console.log(Article.allArticles);
 // Article.allArticles.forEach(function(article) {
@@ -138,7 +138,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-var port = process.env.PORT || 80;
+var port = env.NODE_PORT || 3000;
 // if (app.get('env') === 'development') {
 //   port = 3000;
 // }
